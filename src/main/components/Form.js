@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Row, InputGroup, FormControl, Form, Button } from 'react-bootstrap';
+import PlannerItem from '../models/PlannerItem';
 
 export default class AddItemForm extends React.Component {
 
@@ -10,7 +11,7 @@ export default class AddItemForm extends React.Component {
     }
 
     submit = () => {
-        this.props.onAdd({...this.state})
+        this.props.onAdd(new PlannerItem(this.state.title, this.state.description, this.state.day));
     }
 
     handleTitleChange = (event) => {
@@ -57,7 +58,7 @@ export default class AddItemForm extends React.Component {
                     </Form.Group>
                 </Col>
                 <Col md={3}>
-                    <Button onClick={this.submit}>
+                    <Button onClick={this.submit} className="w-100">
                         ADD
                 </Button>
                 </Col>

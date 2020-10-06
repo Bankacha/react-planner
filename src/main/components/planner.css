@@ -1,6 +1,10 @@
 .day-item {
-    background-color: aquamarine;
+    background-color: silver;
 }
 .day {
     border: 3px solid black;
+}
+
+.completed {
+    background-color: aquamarine;
 }
