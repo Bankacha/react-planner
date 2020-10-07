@@ -1,4 +1,5 @@
 import React from 'react';
+import DayWidget from './components/DayWidget';
 import AddItemFForm from "./components/Form"
 import ItemsTable from './components/itemsTable';
 import Planner from './components/planner';
@@ -31,6 +32,7 @@ export default class MainPage extends React.Component {
                 <AddItemFForm onAdd={this.addItemToDay}></AddItemFForm>
                 <Planner planner={this.state.planner}></Planner>
                 <ItemsTable planner={this.state.planner}></ItemsTable>
+                <DayWidget days={this.state.planner}></DayWidget>
             </div>
         )
     }
