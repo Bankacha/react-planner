@@ -1,5 +1,6 @@
 import React from 'react';
 import AddItemFForm from "./components/Form"
+import ItemsTable from './components/itemsTable';
 import Planner from './components/planner';
 
 export default class MainPage extends React.Component {
@@ -29,6 +30,7 @@ export default class MainPage extends React.Component {
             <div>
                 <AddItemFForm onAdd={this.addItemToDay}></AddItemFForm>
                 <Planner planner={this.state.planner}></Planner>
+                <ItemsTable planner={this.state.planner}></ItemsTable>
             </div>
         )
     }
