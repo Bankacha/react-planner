@@ -6,7 +6,8 @@ export default class AddItemForm extends React.Component {
     state = {
         title: '',
         description: '',
-        day: "default"
+        day: "default",
+        priority: "default"
     }
 
     submit = () => {
@@ -30,6 +31,12 @@ export default class AddItemForm extends React.Component {
             day: event.target.value
         })
     } 
+
+    handlePriorityChange = (event) => {
+        this.setState({
+            priority: event.target.value
+        })
+    }
     
     render() {
         return (
@@ -56,7 +63,19 @@ export default class AddItemForm extends React.Component {
                         </Form.Control>
                     </Form.Group>
                 </Col>
-                <Col md={3}>
+
+                <Col md={2}>
+                <Form.Group>
+                        <Form.Control onChange={this.handlePriorityChange} as="select" custom>
+                            <option value="default">Select</option>
+                            <option value="1">To do</option>
+                            <option value="2">Important</option>
+                            <option value="3">High priority</option>
+                        </Form.Control>
+                    </Form.Group>
+                </Col>
+
+                <Col md={1}>
                     <Button onClick={this.submit}>
                         ADD
                 </Button>

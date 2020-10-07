@@ -5,10 +5,32 @@ import './planner.css'
 
 function Item(props) {
 
+    const getPriorityClass = (priority) => {
+        const map = {
+            '1': 'low',
+            '2': 'middle',
+            '3': 'high'
+        };
+
+        let className = map[priority];
+
+        // if (priority === "1") {
+        //     className = 'low';
+        // }
+        // if (priority === "2") {
+        //     className = "middle"
+        // }
+        // if (priority === "3") {
+        //     className = "high"
+        // }
+
+        return `priority-${className}`;
+    }
+
     return (
-        
-        <Row className="mb-2">
-            <Col className='day-item'>
+
+        <Row className={`mb-2 day-item ${getPriorityClass(props.item.priority)}`}>
+            <Col>
                 <h3>{props.item.title}</h3>
                 <p>{props.item.description}</p>
             </Col>

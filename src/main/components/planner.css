@@ -4,3 +4,15 @@
 .day {
     border: 3px solid black;
 }
+
+.priority-low {
+    background-color: blue;
+}
+
+.priority-middle {
+    background-color: yellow;
+}
+
+.priority-high {
+    background-color: red;
+}
