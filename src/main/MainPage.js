@@ -14,7 +14,13 @@ export default class MainPage extends React.Component {
     }
 
     addItemToDay = (newItem) => {
-        this.state.planner[newItem.day].push(newItem)
+        const plannerCopy = {...this.state.planner};
+        plannerCopy[newItem.day].push(newItem)
+
+
+        this.setState({
+            planner: plannerCopy
+        })
     }
 
     render() {
