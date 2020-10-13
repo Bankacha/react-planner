@@ -14,7 +14,23 @@ export default class ItemsTable extends React.Component {
         return map[priority]
     }
 
+    getAllDays = () => {
+        let dayKey = ['mon', 'tue', 'wed', 'thu', 'fri'];
+        let daysArr =[];
+        
+        for(let day of dayKey) {
+            for(let one of this.props.planner[day]) {
+                daysArr.push(one)
+            }
+        }
+
+        return daysArr;
+    }
+
     render() {
+
+        console.log(this.getAllDays())
+
         return (
             <Row className="mt-5">
                 <Col>
@@ -30,7 +46,7 @@ export default class ItemsTable extends React.Component {
                         </thead>
                         <tbody>
                             {
-                                this.props.planner.mon.map((item, i) => {
+                                this.getAllDays().map((item, i) => {
                                     return (
                                         <tr key={i}>
                                             <td>{this.getPriorityName(item.priority)}</td>
