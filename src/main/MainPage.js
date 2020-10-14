@@ -16,6 +16,12 @@ export default class MainPage extends React.Component {
         }
     }
 
+    removeTodo = (name) => {
+    this.setState({
+        planner: this.state.planner.filter(el => el !== name)
+    })
+}
+
     addItemToDay = (newItem) => {
         const plannerCopy = {...this.state.planner};
         plannerCopy[newItem.day].push(newItem)
@@ -31,7 +37,7 @@ export default class MainPage extends React.Component {
         return (
             <div>
                 <AddItemFForm onAdd={this.addItemToDay}></AddItemFForm>
-                <Planner planner={this.state.planner}></Planner>
+                <Planner planner={this.state.planner}> </Planner>
                 <ItemsTable planner={this.state.planner}></ItemsTable>
                 <DayWidget days={this.state.planner}></DayWidget>
                 <Stats statsInfo={this.state.planner}></Stats>

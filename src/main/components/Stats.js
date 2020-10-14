@@ -76,8 +76,6 @@ export default class Stats extends React.Component {
                             <tr >
 
                                 <td>{this.highPriorityCount()}</td>
-
-
                                 <td>{this.countDayAvg()}</td>
                                 <td>{this.firstPartOfTheWeekCount()}</td>
 
